@@ -1,1 +1,8 @@
-# Working in a new project, studying the HTML language and this page helps me to see how I am learning and my progress.
+# João D'Avila - Personal Page
+
+A modern, personal website showcasing my portfolio, skills, and interests.
+
+## Features
+- **Design**: Clean, minimalist UI with smooth scroll animations.
+- **Tech**: HTML5, CSS3 (Grid/Flexbox), Vanilla JS.
+- **Sections**: Tech specs, "Bento box" philosophy grid, education, and hobbies.
