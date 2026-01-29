@@ -1,0 +1,382 @@
+:root {
+    --bg-color: #000000;
+    --text-color: #f5f5f7;
+    --accent-color: #2997ff;
+    --secondary-text: #86868b;
+    --card-bg: #1d1d1f;
+    --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --max-width: 1000px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-main);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.92); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes blurIn {
+    from { opacity: 0; filter: blur(20px); transform: scale(1.1); }
+    to { opacity: 1; filter: blur(0); transform: scale(1); }
+}
+
+.reveal {
+    opacity: 0;
+    will-change: transform, opacity, filter;
+}
+
+.reveal.active.fade-up {
+    animation: fadeInUp 1.0s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.reveal.active.scale-in {
+    animation: scaleIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.reveal.active.blur-in {
+    animation: blurIn 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+
+/* Twemoji Fix for Windows */
+img.emoji {
+    display: inline-block !important;
+    height: 1.2em;
+    width: 1.2em;
+    margin: 0 .15em 0 .1em;
+    vertical-align: -0.2em;
+    pointer-events: none;
+}
+
+/* Typography */
+h1 {
+    font-size: clamp(40px, 8vw, 80px);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: clamp(30px, 5vw, 56px);
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 19px; /* Apple uses approx 19-21px for body */
+    color: var(--secondary-text);
+    font-weight: 400;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Layout */
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+section {
+    padding: 100px 0;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero h1 {
+    background: linear-gradient(180deg, #fff, #b6b6b6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Specs / Tech Section */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.stat-item {
+    text-align: left;
+    border-top: 1px solid #333;
+    padding-top: 20px;
+}
+
+.stat-value {
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-size: 17px;
+    color: var(--secondary-text);
+}
+
+/* Bento Grid / Philosophy */
+.philosophy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: var(--card-bg);
+    border-radius: 20px;
+    padding: 40px;
+    height: 100%;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.02);
+}
+
+.card-icon {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: var(--accent-color);
+}
+
+/* Profile Image */
+.profile-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+.profile-img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 50%;
+    filter: grayscale(20%);
+    transition: filter 0.5s ease;
+}
+
+.profile-img:hover {
+    filter: grayscale(0%);
+}
+
+/* Lifestyle / Dark Section */
+.lifestyle {
+    background: #111;
+    margin-top: 50px;
+    border-radius: 30px;
+    padding: 60px;
+    text-align: center;
+}
+
+.chips {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.chip {
+    background: #333;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 60px 0;
+    color: var(--secondary-text);
+    font-size: 14px;
+}
+
+footer a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Game Section (Apple Arcade Style) */
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.game-card {
+    height: 320px;
+    border-radius: 24px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease;
+    cursor: default;
+}
+
+.game-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+    z-index: 10;
+}
+
+/* Abstract backgrounds for games */
+.game-elden {
+    background: linear-gradient(135deg, #1a1a1a, #6e5c3e); /* Gold/Dark */
+}
+.game-hearthstone {
+    background: linear-gradient(135deg, #2c1a0e, #d4a04d); /* Tavern Warmth */
+}
+.game-expedition {
+    background: linear-gradient(135deg, #0e1a2c, #c93b3b); /* Sci-fi/Red pop */
+}
+.game-starwars {
+    background: linear-gradient(135deg, #000000, #1e3a8a); /* Jedi Blue/Space */
+}
+
+.game-content {
+    position: relative;
+    z-index: 2;
+}
+
+.game-genre {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 8px;
+}
+
+.game-title {
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 1.1;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.game-desc {
+    font-size: 14px;
+    color: rgba(255,255,255,0.9);
+    margin-top: 10px;
+    opacity: 0.8;
+}
+
+.game-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.8));
+    z-index: 1;
+}
+
+.game-icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    opacity: 0.5;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    h1 { font-size: 48px; }
+    h2 { font-size: 36px; }
+    section { padding: 60px 0; }
+    .lifestyle { padding: 40px 20px; }
+}
+
+/* Photography Section */
+.scrolling-gallery {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 20px 0 40px;
+    /* scroll-snap-type: x mandatory; <- Removed for smooth auto-scrolling */
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+}
+
+.scrolling-gallery::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+}
+
+.gallery-item {
+    flex: 0 0 auto;
+    width: 280px;  /* Slightly portrait ratio */
+    height: 380px;
+    border-radius: 16px;
+    overflow: hidden;
+    /* scroll-snap-align: center; <- Removed for smooth auto-scrolling */
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
