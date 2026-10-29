@@ -4,229 +4,251 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>João D'Avila | Mobile Engineer</title>
-    <link rel="stylesheet" href="style.css">
     <meta name="description" content="Senior Mobile Engineer with 8+ years of experience building native Android, iOS, and cross-platform products with Kotlin, Swift, and Compose.">
+    <meta name="theme-color" content="#000000">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="João D'Avila | Mobile Engineer">
+    <meta property="og:description" content="Senior Mobile Engineer. Native Android, iOS, and cross-platform products. Creator of Soi!">
+    <meta property="og:image" content="https://joaodavil4.github.io/html-johnpage/pics/jpdavila.jpg">
+    <link rel="stylesheet" href="style.css">
     <!-- Check for Twemoji locally or fallback to CDN -->
     <script src="https://unpkg.com/twemoji@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
+    <!-- Navigation -->
+    <header class="site-nav">
+        <nav class="nav-inner" aria-label="Primary">
+            <a class="nav-brand" href="#top">João D’Avila</a>
+            <ul class="nav-links">
+                <li><a href="#work">Work</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#photos">Photos</a></li>
+                <li><a class="nav-cta" href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
     <!-- Hero Section -->
-    <section class="hero container">
-        <div class="reveal blur-in">
-            <h1>João D’Avila</h1>
-            <p class="reveal fade-up delay-1">Senior Mobile Engineer. <br>Crafting scalable, high-quality mobile experiences.</p>
+    <section class="hero" id="top">
+        <div class="hero-glow" aria-hidden="true"></div>
+        <div class="container hero-inner">
+            <div class="reveal blur-in">
+                <p class="eyebrow">Senior Mobile Engineer</p>
+                <h1>João D’Avila</h1>
+            </div>
+            <p class="hero-sub reveal fade-up delay-1">Crafting scalable, high-quality mobile experiences<br class="br-desktop"> for iOS and Android.</p>
+            <div class="hero-cta reveal fade-up delay-2">
+                <a class="btn btn-primary" href="#work">See my work</a>
+                <a class="link-arrow" href="#contact">Get in touch</a>
+            </div>
         </div>
+        <a class="scroll-cue" href="#about" aria-label="Scroll to About"><span></span></a>
     </section>
 
     <!-- Profile & Intro -->
-    <section class="container profile-section">
-        <img src="./pics/jpdavila.jpg" alt="João D'Avila" class="profile-img reveal scale-in">
-        <div style="max-width: 700px; text-align: center;" class="reveal fade-up delay-1">
-            <h2>Engineered for Impact.</h2>
-            <p>Based in Brazil 🇧🇷, building for the world. I bring over 8+ years of experience creating native Android and iOS products with a relentless focus on clean code, performance, and long-term maintainability.</p>
+    <section class="section" id="about">
+        <div class="container profile-section">
+            <img src="./pics/jpdavila.jpg" alt="João D'Avila" class="profile-img reveal scale-in" width="300" height="300">
+            <div class="intro reveal fade-up delay-1">
+                <h2>Engineered for Impact.</h2>
+                <p>Based in Brazil 🇧🇷, building for the world. I bring over 8+ years of experience creating native Android and iOS products with a relentless focus on clean code, performance, and long-term maintainability.</p>
+            </div>
         </div>
     </section>
 
     <!-- Tech Specs -->
-    <section class="container">
-        <h2 class="reveal fade-up">The Specs.</h2>
-        <div class="stats-grid reveal fade-up delay-1">
-            <div class="stat-item">
-                <div class="stat-value">8+</div>
-                <div class="stat-label">Years Experience</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-value">iOS & Android</div>
-                <div class="stat-label">Native + Cross-Platform</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-value">Global</div>
-                <div class="stat-label">Product Scale</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-value">UI/UX</div>
-                <div class="stat-label">Design Focused</div>
+    <section class="section section-tight">
+        <div class="container">
+            <h2 class="reveal fade-up">The Specs.</h2>
+            <div class="stats-grid reveal fade-up delay-1">
+                <div class="stat-item">
+                    <div class="stat-value">8+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">iOS &amp; Android</div>
+                    <div class="stat-label">Native + Cross-Platform</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">Global</div>
+                    <div class="stat-label">Product Scale</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">UI/UX</div>
+                    <div class="stat-label">Design Focused</div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Published Apps -->
-    <section class="container">
-        <h2 class="reveal fade-up">Published Apps.</h2>
-        <div class="project-grid project-grid--single reveal fade-up delay-1">
-            <a class="project-card project-card-link" href="https://apps.apple.com/app/id6818594589" target="_blank" rel="noopener noreferrer">
-                <div class="project-icon">📷</div>
-                <span class="project-status dot live">Live on the App Store</span>
-                <h3>Soi!</h3>
-                <p style="margin-bottom: 0;">Photo quests for travelers. Soi! gives you fresh photo missions for the city you're in, then turns your shots into a montage worth keeping. Starting in Vietnam.</p>
-                <div class="project-tech">
-                    <span>iOS</span>
-                    <span>Travel</span>
-                    <span>Photo Quests</span>
-                </div>
-                <span class="project-cta">View on the App Store →</span>
-            </a>
-        </div>
-    </section>
+    <!-- Apps & Projects -->
+    <section class="section" id="work">
+        <div class="container">
+            <h2 class="reveal fade-up">Apps &amp; Projects.</h2>
+            <p class="section-sub reveal fade-up">Shipped, and in the works.</p>
 
-    <!-- Currently Building -->
-    <section class="container">
-        <h2 class="reveal fade-up">Currently Building.</h2>
-        <div class="project-grid reveal fade-up delay-1">
-            <div class="project-card">
-                <div class="project-icon">🧭</div>
-                <span class="project-status dot wip">In Development</span>
-                <h3>Tabi</h3>
-                <p style="margin-bottom: 0;">AI-powered learning app — ask about any topic and get a structured explanation, quiz, fun facts, and curated deep-dives, generated on the fly.</p>
-                <div class="project-tech">
-                    <span>Kotlin Multiplatform</span>
-                    <span>Compose</span>
-                    <span>Android & iOS</span>
+            <div class="bento reveal fade-up delay-1">
+                <a class="tile tile-soi spot" href="https://apps.apple.com/app/id6818594589" target="_blank" rel="noopener noreferrer">
+                    <img class="tile-app-icon" src="./pics/soi-icon.png" alt="Soi! app icon" width="88" height="88" loading="lazy">
+                    <div class="soi-art" aria-hidden="true">
+                        <img src="./pics/soi-hoi-an.jpg" alt="" loading="lazy">
+                        <img src="./pics/soi-ha-long.jpg" alt="" loading="lazy">
+                        <img src="./pics/soi-mu-cang-chai.jpg" alt="" loading="lazy">
+                    </div>
+                    <span class="pill pill-live">Live on the App Store</span>
+                    <h3>Soi!</h3>
+                    <p>Photo quests for travelers. Soi! gives you fresh photo missions for the city you're in, then turns your shots into a montage worth keeping. Starting in Vietnam.</p>
+                    <div class="tags"><span>iOS</span><span>Travel</span><span>Photo Quests</span></div>
+                    <span class="tile-link">View on the App Store</span>
+                </a>
+
+                <div class="tile tile-tabi spot">
+                    <div class="tile-icon">🧭</div>
+                    <span class="pill pill-wip">In Development</span>
+                    <h3>Tabi</h3>
+                    <p>AI-powered learning app. Ask about any topic and get a structured explanation, quiz, fun facts, and curated deep-dives, generated on the fly.</p>
+                    <div class="tags"><span>Kotlin Multiplatform</span><span>Compose</span><span>Android &amp; iOS</span></div>
                 </div>
-            </div>
-            <div class="project-card">
-                <div class="project-icon">📸</div>
-                <span class="project-status dot wip">In Development</span>
-                <h3>Frame</h3>
-                <p style="margin-bottom: 0;">An iPhone AI photography coach that gives live camera composition guidance as you shoot, so every shot is a better one.</p>
-                <div class="project-tech">
-                    <span>Swift</span>
-                    <span>SwiftUI</span>
-                    <span>Apple Vision</span>
+
+                <div class="tile tile-frame spot">
+                    <div class="tile-icon">📸</div>
+                    <span class="pill pill-wip">In Development</span>
+                    <h3>Frame</h3>
+                    <p>An iPhone AI photography coach that gives live camera composition guidance as you shoot, so every shot is a better one.</p>
+                    <div class="tags"><span>Swift</span><span>SwiftUI</span><span>Apple Vision</span></div>
                 </div>
-            </div>
-            <div class="project-card">
-                <div class="project-icon">🌍</div>
-                <span class="project-status dot wip">In Development</span>
-                <h3>NomadBase</h3>
-                <p style="margin-bottom: 0;">A city guide app for digital nomads — neighborhoods, places, events, and the essentials for living location-independent.</p>
-                <div class="project-tech">
-                    <span>Swift</span>
-                    <span>iOS</span>
-                    <span>SwiftUI</span>
+
+                <div class="tile tile-nomad spot">
+                    <div class="tile-icon">🌍</div>
+                    <span class="pill pill-wip">In Development</span>
+                    <h3>NomadBase</h3>
+                    <p>A city guide app for digital nomads: neighborhoods, places, events, and the essentials for living location-independent.</p>
+                    <div class="tags"><span>Swift</span><span>iOS</span><span>SwiftUI</span></div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Philosophy -->
-    <section class="container">
-        <h2 class="reveal fade-up">Beyond the Code.</h2>
-        <div class="philosophy-grid reveal fade-up delay-2">
-            <div class="card">
-                <div class="card-icon">🛠️</div>
-                <h3>Modernization</h3>
-                <p>Driving modularization, Compose adoption, and improved developer tooling.</p>
-            </div>
-            <div class="card">
-                <div class="card-icon">🤝</div>
-                <h3>Collaboration</h3>
-                <p>Turning abstract ideas into reliable, well-crafted solutions with design, product, and QA.</p>
-            </div>
-            <div class="card">
-                <div class="card-icon">⚡</div>
-                <h3>Proactive Ownership</h3>
-                <p>Investigating edge-cases, improving observability, and documenting for speed.</p>
-            </div>
-            <div class="card">
-                <div class="card-icon">🤖</div>
-                <h3>AI-Enhanced Workflow</h3>
-                <p>Leveraging AI tools to drastically accelerate implementation layers, maximizing shipping speed without compromising code quality.</p>
-            </div>
-             <div class="card">
-                <div class="card-icon">🌐</div>
-                <h3>Communication</h3>
-                <p>Native Portuguese.</p>
-                <div style="margin-top: 10px; display: flex; flex-direction: column; gap: 5px; color: #ccc; font-size: 16px;">
-                    <span>🇺🇸 English (Fluent)</span>
-                    <span>🇪🇸 Spanish (Advanced)</span>
-                    <span>🇯🇵 Japanese (Learning)</span>
+    <section class="section">
+        <div class="container">
+            <h2 class="reveal fade-up">Beyond the Code.</h2>
+            <div class="philosophy-grid reveal fade-up delay-1">
+                <div class="card spot">
+                    <div class="card-icon">🛠️</div>
+                    <h3>Modernization</h3>
+                    <p>Driving modularization, Compose adoption, and improved developer tooling.</p>
+                </div>
+                <div class="card spot">
+                    <div class="card-icon">🤝</div>
+                    <h3>Collaboration</h3>
+                    <p>Turning abstract ideas into reliable, well-crafted solutions with design, product, and QA.</p>
+                </div>
+                <div class="card spot">
+                    <div class="card-icon">⚡</div>
+                    <h3>Proactive Ownership</h3>
+                    <p>Investigating edge-cases, improving observability, and documenting for speed.</p>
+                </div>
+                <div class="card card-wide spot">
+                    <div class="card-icon">🤖</div>
+                    <h3>AI-Enhanced Workflow</h3>
+                    <p>Leveraging AI tools to drastically accelerate implementation layers, maximizing shipping speed without compromising code quality.</p>
+                </div>
+                <div class="card spot">
+                    <div class="card-icon">🌐</div>
+                    <h3>Communication</h3>
+                    <p>Native Portuguese.</p>
+                    <ul class="lang-list">
+                        <li>🇺🇸 English (Fluent)</li>
+                        <li>🇪🇸 Spanish (Advanced)</li>
+                        <li>🇯🇵 Japanese (Learning)</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Personal / Get to Know Me -->
-    <section class="container">
-        <div class="reveal fade-up" style="text-align: center;">
-            <h2>Beyond the Screen.</h2>
-            <p style="max-width: 600px; margin: 0 auto 40px;">Disciplined, adaptable, and always curious — a peek at the person behind the code.</p>
-            <button class="personal-toggle" id="personalToggle" type="button" aria-expanded="false" aria-controls="personalPanel">
-                <span class="plus-icon" aria-hidden="true">+</span>
-                <span class="toggle-label">Get to know more about me</span>
-            </button>
-        </div>
-
-        <div class="personal-panel" id="personalPanel" aria-hidden="true">
-            <div class="lifestyle">
-                <h2>Location Independent. <br>Curious by Nature.</h2>
-                <p style="color: #aaa; margin: 20px auto; max-width: 600px;">
-                    I believe the best engineers are disciplined, adaptable, and balanced.
-                    From fitness to continuous learning, I bring this energy to everything I do.
-                </p>
-
-                <div style="margin: 30px 0;">
-                    <p style="font-size: 13px; color: #666; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px;">Where I've Worked From</p>
-                    <div class="chips">
-                        <span class="chip">🇦🇷 Argentina</span>
-                        <span class="chip">🇨🇱 Chile</span>
-                        <span class="chip">🇨🇴 Colombia</span>
-                        <span class="chip">🇨🇷 Costa Rica</span>
-                    </div>
-                </div>
-
-                <div class="chips">
-                    <span class="chip">Travel</span>
-                    <span class="chip">Fitness</span>
-                    <span class="chip">Remote Work</span>
-                </div>
+    <section class="section">
+        <div class="container">
+            <div class="reveal fade-up personal-intro">
+                <h2>Beyond the Screen.</h2>
+                <p>Disciplined, adaptable, and always curious. A peek at the person behind the code.</p>
+                <button class="personal-toggle" id="personalToggle" type="button" aria-expanded="false" aria-controls="personalPanel">
+                    <span class="plus-icon" aria-hidden="true">+</span>
+                    <span class="toggle-label">Get to know more about me</span>
+                </button>
             </div>
 
-            <div style="margin-top: 60px;">
-                <h2>The Arcade.</h2>
-                <div class="game-grid">
-                    <!-- Game 1: Elden Ring -->
-                    <div class="game-card game-elden">
-                        <div class="game-overlay"></div>
-                        <div class="game-icon">💍</div>
-                        <div class="game-content">
-                            <div class="game-genre">Action RPG</div>
-                            <div class="game-title">Elden Ring</div>
-                            <div class="game-desc">Mastery through persistence. A lesson in patience and precise timing.</div>
+            <div class="personal-panel" id="personalPanel" aria-hidden="true">
+                <div class="lifestyle">
+                    <h2>Location Independent. <br>Curious by Nature.</h2>
+                    <p class="lifestyle-copy">
+                        I believe the best engineers are disciplined, adaptable, and balanced.
+                        From fitness to continuous learning, I bring this energy to everything I do.
+                    </p>
+
+                    <div class="lifestyle-block">
+                        <p class="micro-label">Where I've Worked From</p>
+                        <div class="chips">
+                            <span class="chip">🇦🇷 Argentina</span>
+                            <span class="chip">🇨🇱 Chile</span>
+                            <span class="chip">🇨🇴 Colombia</span>
+                            <span class="chip">🇨🇷 Costa Rica</span>
                         </div>
                     </div>
 
-                    <!-- Game 2: Hearthstone -->
-                    <div class="game-card game-hearthstone">
-                        <div class="game-overlay"></div>
-                        <div class="game-icon">🃏</div>
-                        <div class="game-content">
-                            <div class="game-genre">Strategy</div>
-                            <div class="game-title">Hearthstone</div>
-                            <div class="game-desc">Calculated risks and strategic deck building. Always thinking two turns ahead.</div>
-                        </div>
+                    <div class="chips">
+                        <span class="chip">Travel</span>
+                        <span class="chip">Fitness</span>
+                        <span class="chip">Remote Work</span>
                     </div>
+                </div>
 
-                    <!-- Game 3: Expedition 33 -->
-                    <div class="game-card game-expedition">
-                        <div class="game-overlay"></div>
-                        <div class="game-icon">🚀</div>
-                        <div class="game-content">
-                            <div class="game-genre">Adventure</div>
-                            <div class="game-title">Expedition 33</div>
-                            <div class="game-desc">Exploring the unknown. Adapting to new environments and mechanics.</div>
+                <div class="arcade">
+                    <h2>The Arcade.</h2>
+                    <div class="game-grid">
+                        <div class="game-card game-elden">
+                            <div class="game-overlay"></div>
+                            <div class="game-icon">💍</div>
+                            <div class="game-content">
+                                <div class="game-genre">Action RPG</div>
+                                <div class="game-title">Elden Ring</div>
+                                <div class="game-desc">Mastery through persistence. A lesson in patience and precise timing.</div>
+                            </div>
                         </div>
-                    </div>
 
-                    <!-- Game 4: Star Wars -->
-                    <div class="game-card game-starwars">
-                        <div class="game-overlay"></div>
-                        <div class="game-icon">⚔️</div>
-                        <div class="game-content">
-                            <div class="game-genre">Action Adventure</div>
-                            <div class="game-title">Star Wars Jedi</div>
-                            <div class="game-desc">Fallen Order & Survivor. Precision combat meets cinematic storytelling.</div>
+                        <div class="game-card game-hearthstone">
+                            <div class="game-overlay"></div>
+                            <div class="game-icon">🃏</div>
+                            <div class="game-content">
+                                <div class="game-genre">Strategy</div>
+                                <div class="game-title">Hearthstone</div>
+                                <div class="game-desc">Calculated risks and strategic deck building. Always thinking two turns ahead.</div>
+                            </div>
+                        </div>
+
+                        <div class="game-card game-expedition">
+                            <div class="game-overlay"></div>
+                            <div class="game-icon">🚀</div>
+                            <div class="game-content">
+                                <div class="game-genre">Adventure</div>
+                                <div class="game-title">Expedition 33</div>
+                                <div class="game-desc">Exploring the unknown. Adapting to new environments and mechanics.</div>
+                            </div>
+                        </div>
+
+                        <div class="game-card game-starwars">
+                            <div class="game-overlay"></div>
+                            <div class="game-icon">⚔️</div>
+                            <div class="game-content">
+                                <div class="game-genre">Action Adventure</div>
+                                <div class="game-title">Star Wars Jedi</div>
+                                <div class="game-desc">Fallen Order &amp; Survivor. Precision combat meets cinematic storytelling.</div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -235,13 +257,13 @@
     </section>
 
     <!-- Photography Section -->
-    <section class="container" style="overflow: hidden;"> <!-- Overflow hidden to contain full-width feeling if needed, keeping container limits though -->
-        <div class="reveal fade-up">
+    <section class="section" id="photos">
+        <div class="container reveal fade-up">
             <h2>Captured Moments.</h2>
-            <p>Photography allows me to pause and appreciate the details. A collection of shots from my travels.</p>
+            <p class="section-sub">Photography allows me to pause and appreciate the details. A collection of shots from my travels.</p>
         </div>
-        
-        <div class="scrolling-gallery reveal fade-up delay-1">
+
+        <div class="scrolling-gallery reveal fade-up delay-1" aria-label="Travel photo gallery">
             <div class="gallery-item"><img src="./pics/travel1.jpeg" alt="Travel Photo 1" loading="lazy"></div>
             <div class="gallery-item"><img src="./pics/travel2.jpeg" alt="Travel Photo 2" loading="lazy"></div>
             <div class="gallery-item"><img src="./pics/travel3.jpeg" alt="Travel Photo 3" loading="lazy"></div>
@@ -253,25 +275,26 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
+    </main>
+
+    <!-- Footer / Contact -->
+    <footer class="site-footer" id="contact">
         <div class="container">
-            <h3>Let's build something meaningful.</h3>
-            <p>
-                <a href="mailto:im.joaodavila@gmail.com">im.joaodavila@gmail.com</a>
-                <br><br>
-                <a href="https://github.com/joaodavil4/" target="_blank" rel="noopener noreferrer">GitHub</a>
-            </p>
-            <p style="margin-top: 40px; font-size: 12px; color: #444;"> © 2026 João D'Avila</p>
+            <h2 class="reveal fade-up">Let's build something meaningful.</h2>
+            <div class="footer-cta reveal fade-up delay-1">
+                <a class="btn btn-primary" href="mailto:im.joaodavila@gmail.com">Email me</a>
+                <a class="link-arrow" href="https://github.com/joaodavil4/" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a class="link-arrow" href="https://apps.apple.com/app/id6818594589" target="_blank" rel="noopener noreferrer">Soi! on the App Store</a>
+            </div>
+            <p class="footer-mail">im.joaodavila@gmail.com</p>
+            <p class="legal">© 2026 João D'Avila</p>
         </div>
     </footer>
 
     <script>
-        const observerOptions = {
-            threshold: 0.15,
-            rootMargin: "0px 0px -50px 0px"
-        };
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+        // Scroll reveal
         const scrollObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -279,10 +302,23 @@
                     scrollObserver.unobserve(entry.target);
                 }
             });
-        }, observerOptions);
+        }, { threshold: 0.15, rootMargin: "0px 0px -50px 0px" });
+        document.querySelectorAll('.reveal').forEach(el => scrollObserver.observe(el));
 
-        const elements = document.querySelectorAll('.reveal');
-        elements.forEach(el => scrollObserver.observe(el));
+        // Frosted nav gets a hairline once the page scrolls
+        const nav = document.querySelector('.site-nav');
+        const syncNav = () => nav.classList.toggle('scrolled', window.scrollY > 8);
+        syncNav();
+        window.addEventListener('scroll', syncNav, { passive: true });
+
+        // Cursor spotlight on bento cards
+        document.addEventListener('pointermove', (e) => {
+            const card = e.target.closest('.spot');
+            if (!card) return;
+            const r = card.getBoundingClientRect();
+            card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+            card.style.setProperty('--my', (e.clientY - r.top) + 'px');
+        });
 
         // Personal section expand/collapse
         const personalToggle = document.getElementById('personalToggle');
@@ -295,7 +331,7 @@
                 personalPanel.setAttribute('aria-hidden', String(isOpen));
                 personalPanel.classList.toggle('open', !isOpen);
                 toggleLabel.textContent = isOpen ? 'Get to know more about me' : 'Show less';
-                if (!isOpen) {
+                if (!isOpen && !reduceMotion) {
                     setTimeout(() => personalPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 300);
                 }
             });
@@ -308,35 +344,34 @@
             }
         };
 
-        // Photography Auto-Scroll
+        // Photography auto-scroll: seamless loop, time-based, paused off-screen / on interaction
         const gallery = document.querySelector('.scrolling-gallery');
-        if (gallery) {
-            // Duplicate content for infinite loop effect
+        if (gallery && !reduceMotion) {
+            const count = gallery.children.length;
             gallery.innerHTML += gallery.innerHTML;
-            
-            let isPaused = false;
-            let scrollSpeed = 1.0; // Adjust for speed
-            
-            gallery.addEventListener('mouseenter', () => isPaused = true);
-            gallery.addEventListener('mouseleave', () => isPaused = false);
-            // Handle touch interactions
-            gallery.addEventListener('touchstart', () => isPaused = true);
-            gallery.addEventListener('touchend', () => setTimeout(() => isPaused = false, 2000));
+            gallery.querySelectorAll('img').forEach((img, i) => { if (i >= count) img.alt = ''; });
 
-            function autoScrollGallery() {
-                if (!isPaused) {
-                    gallery.scrollLeft += scrollSpeed;
-                    
-                    // Reset scroll position when halfway through (seamless loop)
-                    // We allow a 2px buffer to ensure smooth resetting
-                    if (gallery.scrollLeft >= (gallery.scrollWidth / 2)) {
-                        gallery.scrollLeft = 0;
-                    }
+            let isPaused = false, inView = false, pos = 0, last = 0;
+            const SPEED = 45; // px per second
+
+            new IntersectionObserver(([e]) => { inView = e.isIntersecting; }).observe(gallery);
+            gallery.addEventListener('mouseenter', () => isPaused = true);
+            gallery.addEventListener('mouseleave', () => { isPaused = false; pos = gallery.scrollLeft; });
+            gallery.addEventListener('touchstart', () => isPaused = true, { passive: true });
+            gallery.addEventListener('touchend', () => setTimeout(() => { isPaused = false; pos = gallery.scrollLeft; }, 2000), { passive: true });
+
+            function tick(now) {
+                const dt = Math.min(now - last, 64) / 1000;
+                last = now;
+                if (inView && !isPaused) {
+                    const period = gallery.children[count].offsetLeft - gallery.children[0].offsetLeft;
+                    pos += SPEED * dt;
+                    if (pos >= period) pos -= period;
+                    gallery.scrollLeft = pos;
                 }
-                requestAnimationFrame(autoScrollGallery);
+                requestAnimationFrame(tick);
             }
-            
-            autoScrollGallery();
+            requestAnimationFrame(tick);
         }
     </script>
 
