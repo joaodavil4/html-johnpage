@@ -115,6 +115,12 @@ section {
     padding: 100px 0;
 }
 
+/* .container's shorthand padding overrides section's vertical padding, so restore it */
+section.container:not(.hero) {
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+
 /* Hero Section */
 .hero {
     height: 100vh;
@@ -234,6 +240,163 @@ section {
     font-weight: 500;
 }
 
+/* Currently Building / Projects */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.project-card {
+    background: var(--card-bg);
+    border-radius: 20px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: scale(1.02);
+}
+
+.project-icon {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.project-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #6be675;
+    width: fit-content;
+    margin-bottom: 8px;
+}
+
+.project-status.wip {
+    color: #ffb340;
+}
+
+.project-grid--single {
+    grid-template-columns: minmax(280px, 480px);
+}
+
+.project-card-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.project-cta {
+    margin-top: 20px;
+    color: var(--accent-color);
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.project-card-link:hover .project-cta {
+    text-decoration: underline;
+}
+
+.project-status.dot::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: currentColor;
+    flex-shrink: 0;
+}
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.project-tech span {
+    background: #2a2a2c;
+    color: var(--secondary-text);
+    font-size: 13px;
+    padding: 6px 12px;
+    border-radius: 50px;
+}
+
+/* Personal / Get to Know Me toggle */
+.personal-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 auto;
+    background: var(--card-bg);
+    color: var(--text-color);
+    border: 1px solid #333;
+    padding: 16px 28px;
+    border-radius: 50px;
+    font-size: 17px;
+    font-weight: 500;
+    font-family: var(--font-main);
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.personal-toggle:hover {
+    background: #2a2a2c;
+    transform: scale(1.02);
+}
+
+.personal-toggle .plus-icon {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1;
+    transition: transform 0.3s ease;
+}
+
+.personal-toggle[aria-expanded="true"] .plus-icon {
+    transform: rotate(45deg);
+}
+
+.personal-panel {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.7s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease;
+}
+
+.personal-panel.open {
+    max-height: 3000px;
+    opacity: 1;
+    margin-top: 50px;
+}
+
+/* Accessibility: visible focus states */
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal {
+        opacity: 1 !important;
+        animation: none !important;
+    }
+    .personal-panel,
+    .personal-toggle .plus-icon,
+    .card,
+    .game-card,
+    .project-card,
+    .profile-img,
+    .gallery-item img {
+        transition: none !important;
+    }
+}
+
 /* Footer */
 footer {
     text-align: center;
@@ -341,6 +504,7 @@ footer a:hover {
     h1 { font-size: 48px; }
     h2 { font-size: 36px; }
     section { padding: 60px 0; }
+    section.container:not(.hero) { padding-top: 40px; padding-bottom: 40px; }
     .lifestyle { padding: 40px 20px; }
 }
 
