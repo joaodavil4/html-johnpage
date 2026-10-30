@@ -11,22 +11,38 @@
     <meta property="og:description" content="Senior Mobile Engineer. Native Android, iOS, and cross-platform products. Creator of Soi!">
     <meta property="og:image" content="https://joaodavil4.github.io/html-johnpage/pics/jpdavila.jpg">
     <link rel="stylesheet" href="style.css">
-    <!-- Check for Twemoji locally or fallback to CDN -->
-    <script src="https://unpkg.com/twemoji@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
 </head>
 <body>
+
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+        <symbol id="i-lock" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+        <symbol id="i-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></symbol>
+        <symbol id="i-trophy" viewBox="0 0 24 24"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></symbol>
+    </svg>
+    <div class="toast-region" id="toasts" aria-live="polite"></div>
 
     <!-- Navigation -->
     <header class="site-nav">
         <nav class="nav-inner" aria-label="Primary">
             <a class="nav-brand" href="#top">João D’Avila</a>
-            <ul class="nav-links">
-                <li><a href="#work">Work</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#photos">Photos</a></li>
-                <li><a class="nav-cta" href="#contact">Contact</a></li>
-            </ul>
+            <div class="nav-right">
+                <button class="ach-counter" id="achBtn" type="button" aria-expanded="false" aria-controls="achPanel" aria-label="Achievements">
+                    <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-trophy"/></svg>
+                    <span id="achCount">0/7</span>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="#work">Work</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#photos">Photos</a></li>
+                    <li><a class="nav-cta" href="#contact">Contact</a></li>
+                </ul>
+            </div>
         </nav>
+        <div class="ach-panel" id="achPanel" hidden>
+            <p class="hud-tag">Achievements</p>
+            <ul class="ach-list" id="achList"></ul>
+        </div>
+        <div class="xp-bar" aria-hidden="true"><span id="xpFill"></span></div>
     </header>
 
     <main>
@@ -36,6 +52,7 @@
         <div class="hero-glow" aria-hidden="true"></div>
         <div class="container hero-inner">
             <div class="reveal blur-in">
+                <p class="hud-tag hud-tag--hero">Player 1 ready</p>
                 <p class="eyebrow">Senior Mobile Engineer</p>
                 <h1>João D’Avila</h1>
             </div>
@@ -54,7 +71,7 @@
             <img src="./pics/jpdavila.jpg" alt="João D'Avila" class="profile-img reveal scale-in" width="300" height="300">
             <div class="intro reveal fade-up delay-1">
                 <h2>Engineered for Impact.</h2>
-                <p>Based in Brazil 🇧🇷, building for the world. I bring over 8+ years of experience creating native Android and iOS products with a relentless focus on clean code, performance, and long-term maintainability.</p>
+                <p>Based in Brazil, building for the world. I bring over 8+ years of experience creating native Android and iOS products with a relentless focus on clean code, performance, and long-term maintainability.</p>
             </div>
         </div>
     </section>
@@ -62,23 +79,50 @@
     <!-- Tech Specs -->
     <section class="section section-tight">
         <div class="container">
+            <p class="hud-tag reveal fade-up">Player stats</p>
             <h2 class="reveal fade-up">The Specs.</h2>
             <div class="stats-grid reveal fade-up delay-1">
                 <div class="stat-item">
+                    <div class="stat-tag">XP</div>
                     <div class="stat-value">8+</div>
                     <div class="stat-label">Years Experience</div>
                 </div>
                 <div class="stat-item">
+                    <div class="stat-tag">Class</div>
                     <div class="stat-value">iOS &amp; Android</div>
                     <div class="stat-label">Native + Cross-Platform</div>
                 </div>
                 <div class="stat-item">
+                    <div class="stat-tag">Server</div>
                     <div class="stat-value">Global</div>
                     <div class="stat-label">Product Scale</div>
                 </div>
                 <div class="stat-item">
+                    <div class="stat-tag">Style</div>
                     <div class="stat-value">UI/UX</div>
                     <div class="stat-label">Design Focused</div>
+                </div>
+            </div>
+
+            <div class="loadout reveal fade-up delay-2">
+                <div class="loadout-card spot">
+                    <p class="hud-tag">Equipped</p>
+                    <div class="slots">
+                        <span class="slot slot--on">Kotlin</span>
+                        <span class="slot slot--on">Jetpack Compose</span>
+                        <span class="slot slot--on">Swift</span>
+                        <span class="slot slot--on">SwiftUI</span>
+                        <span class="slot slot--on">TypeScript</span>
+                    </div>
+                </div>
+                <div class="loadout-card spot">
+                    <p class="hud-tag hud-tag--dim">Unlocking</p>
+                    <div class="slots">
+                        <span class="slot slot--locked"><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-lock"/></svg>Compose Multiplatform</span>
+                        <span class="slot slot--locked"><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-lock"/></svg>React Native</span>
+                        <span class="slot slot--locked"><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-lock"/></svg>Data Science</span>
+                        <span class="slot slot--locked"><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-lock"/></svg>Japanese</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -87,6 +131,7 @@
     <!-- Apps & Projects -->
     <section class="section" id="work">
         <div class="container">
+            <p class="hud-tag reveal fade-up">Quest log</p>
             <h2 class="reveal fade-up">Apps &amp; Projects.</h2>
             <p class="section-sub reveal fade-up">Shipped, and in the works.</p>
 
@@ -106,7 +151,7 @@
                 </a>
 
                 <div class="tile tile-tabi spot">
-                    <div class="tile-icon">🧭</div>
+                    <div class="tile-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg></div>
                     <span class="pill pill-wip">In Development</span>
                     <h3>Tabi</h3>
                     <p>AI-powered learning app. Ask about any topic and get a structured explanation, quiz, fun facts, and curated deep-dives, generated on the fly.</p>
@@ -114,15 +159,27 @@
                 </div>
 
                 <div class="tile tile-frame spot">
-                    <div class="tile-icon">📸</div>
+                    <div class="tile-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
                     <span class="pill pill-wip">In Development</span>
                     <h3>Frame</h3>
                     <p>An iPhone AI photography coach that gives live camera composition guidance as you shoot, so every shot is a better one.</p>
                     <div class="tags"><span>Swift</span><span>SwiftUI</span><span>Apple Vision</span></div>
                 </div>
 
+                <div class="tile tile-zibao spot">
+                    <span class="glyph" aria-hidden="true">字宝</span>
+                    <div class="tile-head">
+                        <img class="tile-app-icon tile-app-icon--sm" src="./pics/zibao-icon.png" alt="Zibao app icon" width="72" height="72" loading="lazy">
+                        <div class="tones" aria-hidden="true"><span style="--c:#BD3026"></span><span style="--c:#9A5409"></span><span style="--c:#2F6E53"></span><span style="--c:#3067A6"></span></div>
+                    </div>
+                    <span class="pill pill-soon">Coming soon</span>
+                    <h3>Zibao</h3>
+                    <p>Native Mandarin flashcards for iPhone and Apple Watch. A paper-inspired interface, recall-with-clues study, and graded lessons from first words to grammar.</p>
+                    <div class="tags"><span>SwiftUI</span><span>iPhone</span><span>Apple Watch</span></div>
+                </div>
+
                 <div class="tile tile-nomad spot">
-                    <div class="tile-icon">🌍</div>
+                    <div class="tile-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
                     <span class="pill pill-wip">In Development</span>
                     <h3>NomadBase</h3>
                     <p>A city guide app for digital nomads: neighborhoods, places, events, and the essentials for living location-independent.</p>
@@ -135,36 +192,37 @@
     <!-- Philosophy -->
     <section class="section">
         <div class="container">
+            <p class="hud-tag reveal fade-up">Character traits</p>
             <h2 class="reveal fade-up">Beyond the Code.</h2>
             <div class="philosophy-grid reveal fade-up delay-1">
                 <div class="card spot">
-                    <div class="card-icon">🛠️</div>
+                    <div class="card-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
                     <h3>Modernization</h3>
                     <p>Driving modularization, Compose adoption, and improved developer tooling.</p>
                 </div>
                 <div class="card spot">
-                    <div class="card-icon">🤝</div>
+                    <div class="card-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
                     <h3>Collaboration</h3>
                     <p>Turning abstract ideas into reliable, well-crafted solutions with design, product, and QA.</p>
                 </div>
                 <div class="card spot">
-                    <div class="card-icon">⚡</div>
+                    <div class="card-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
                     <h3>Proactive Ownership</h3>
                     <p>Investigating edge-cases, improving observability, and documenting for speed.</p>
                 </div>
                 <div class="card card-wide spot">
-                    <div class="card-icon">🤖</div>
+                    <div class="card-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg></div>
                     <h3>AI-Enhanced Workflow</h3>
                     <p>Leveraging AI tools to drastically accelerate implementation layers, maximizing shipping speed without compromising code quality.</p>
                 </div>
                 <div class="card spot">
-                    <div class="card-icon">🌐</div>
+                    <div class="card-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div>
                     <h3>Communication</h3>
                     <p>Native Portuguese.</p>
                     <ul class="lang-list">
-                        <li>🇺🇸 English (Fluent)</li>
-                        <li>🇪🇸 Spanish (Advanced)</li>
-                        <li>🇯🇵 Japanese (Learning)</li>
+                        <li>English (Fluent)</li>
+                        <li>Spanish (Advanced)</li>
+                        <li>Japanese (Learning)</li>
                     </ul>
                 </div>
             </div>
@@ -175,6 +233,7 @@
     <section class="section">
         <div class="container">
             <div class="reveal fade-up personal-intro">
+                <p class="hud-tag">Side quests</p>
                 <h2>Beyond the Screen.</h2>
                 <p>Disciplined, adaptable, and always curious. A peek at the person behind the code.</p>
                 <button class="personal-toggle" id="personalToggle" type="button" aria-expanded="false" aria-controls="personalPanel">
@@ -194,10 +253,10 @@
                     <div class="lifestyle-block">
                         <p class="micro-label">Where I've Worked From</p>
                         <div class="chips">
-                            <span class="chip">🇦🇷 Argentina</span>
-                            <span class="chip">🇨🇱 Chile</span>
-                            <span class="chip">🇨🇴 Colombia</span>
-                            <span class="chip">🇨🇷 Costa Rica</span>
+                            <span class="chip">Argentina</span>
+                            <span class="chip">Chile</span>
+                            <span class="chip">Colombia</span>
+                            <span class="chip">Costa Rica</span>
                         </div>
                     </div>
 
@@ -213,7 +272,6 @@
                     <div class="game-grid">
                         <div class="game-card game-elden">
                             <div class="game-overlay"></div>
-                            <div class="game-icon">💍</div>
                             <div class="game-content">
                                 <div class="game-genre">Action RPG</div>
                                 <div class="game-title">Elden Ring</div>
@@ -223,7 +281,6 @@
 
                         <div class="game-card game-hearthstone">
                             <div class="game-overlay"></div>
-                            <div class="game-icon">🃏</div>
                             <div class="game-content">
                                 <div class="game-genre">Strategy</div>
                                 <div class="game-title">Hearthstone</div>
@@ -233,7 +290,6 @@
 
                         <div class="game-card game-expedition">
                             <div class="game-overlay"></div>
-                            <div class="game-icon">🚀</div>
                             <div class="game-content">
                                 <div class="game-genre">Adventure</div>
                                 <div class="game-title">Expedition 33</div>
@@ -243,7 +299,6 @@
 
                         <div class="game-card game-starwars">
                             <div class="game-overlay"></div>
-                            <div class="game-icon">⚔️</div>
                             <div class="game-content">
                                 <div class="game-genre">Action Adventure</div>
                                 <div class="game-title">Star Wars Jedi</div>
@@ -259,6 +314,7 @@
     <!-- Photography Section -->
     <section class="section" id="photos">
         <div class="container reveal fade-up">
+            <p class="hud-tag">Photo mode</p>
             <h2>Captured Moments.</h2>
             <p class="section-sub">Photography allows me to pause and appreciate the details. A collection of shots from my travels.</p>
         </div>
@@ -280,6 +336,7 @@
     <!-- Footer / Contact -->
     <footer class="site-footer" id="contact">
         <div class="container">
+            <p class="hud-tag reveal fade-up">Continue?</p>
             <h2 class="reveal fade-up">Let's build something meaningful.</h2>
             <div class="footer-cta reveal fade-up delay-1">
                 <a class="btn btn-primary" href="mailto:im.joaodavila@gmail.com">Email me</a>
@@ -288,6 +345,7 @@
             </div>
             <p class="footer-mail">im.joaodavila@gmail.com</p>
             <p class="legal">© 2026 João D'Avila</p>
+            <p class="legal legal--hint">Hint: Up, Up, Down, Down, Left, Right, Left, Right, B, A.</p>
         </div>
     </footer>
 
@@ -311,6 +369,171 @@
         syncNav();
         window.addEventListener('scroll', syncNav, { passive: true });
 
+        // XP bar: scroll progress
+        const xpFill = document.getElementById('xpFill');
+        let xpTick = false;
+        const syncXp = () => {
+            xpTick = false;
+            const max = document.documentElement.scrollHeight - window.innerHeight;
+            xpFill.style.transform = 'scaleX(' + (max > 0 ? Math.min(1, window.scrollY / max) : 0) + ')';
+        };
+        syncXp();
+        window.addEventListener('scroll', () => { if (!xpTick) { xpTick = true; requestAnimationFrame(syncXp); } }, { passive: true });
+        window.addEventListener('resize', syncXp);
+
+        // Achievements
+        const ACHIEVEMENTS = [
+            { id: 'start',   title: 'Press Start',          desc: 'You opened the portfolio.' },
+            { id: 'player',  title: 'Meet Player One',      desc: 'Read the origin story.',         target: '#about' },
+            { id: 'shipped', title: 'Shipped to Production', desc: 'Soi! is live on the App Store.', target: '#work' },
+            { id: 'traits',  title: 'Character Sheet',      desc: 'Inspected the traits.',          target: '.philosophy-grid' },
+            { id: 'side',    title: 'Side Quest Accepted',  desc: 'Opened the personal section.' },
+            { id: 'photo',   title: 'Photo Mode',           desc: 'Browsed the travel gallery.',    target: '#photos' },
+            { id: 'konami',  title: 'Cheat Code',           desc: 'You know the classics.',         secret: true }
+        ];
+        const STORE_KEY = 'jd-achievements';
+        let unlocked = [];
+        try { unlocked = JSON.parse(localStorage.getItem(STORE_KEY)) || []; } catch (e) { unlocked = []; }
+        const saveUnlocked = () => { try { localStorage.setItem(STORE_KEY, JSON.stringify(unlocked)); } catch (e) {} };
+
+        const achBtn = document.getElementById('achBtn');
+        const achPanel = document.getElementById('achPanel');
+        const achList = document.getElementById('achList');
+        const achCount = document.getElementById('achCount');
+        const toastRegion = document.getElementById('toasts');
+
+        const svgUse = (id) => {
+            const ns = 'http://www.w3.org/2000/svg';
+            const svg = document.createElementNS(ns, 'svg');
+            svg.setAttribute('viewBox', '0 0 24 24');
+            svg.setAttribute('class', 'icon-sm');
+            svg.setAttribute('fill', 'none');
+            svg.setAttribute('stroke', 'currentColor');
+            svg.setAttribute('stroke-width', '1.8');
+            svg.setAttribute('stroke-linecap', 'round');
+            svg.setAttribute('stroke-linejoin', 'round');
+            svg.setAttribute('aria-hidden', 'true');
+            const use = document.createElementNS(ns, 'use');
+            use.setAttribute('href', '#' + id);
+            svg.appendChild(use);
+            return svg;
+        };
+
+        function renderAchievements() {
+            achCount.textContent = unlocked.length + '/' + ACHIEVEMENTS.length;
+            achList.textContent = '';
+            ACHIEVEMENTS.forEach(a => {
+                const done = unlocked.includes(a.id);
+                const li = document.createElement('li');
+                li.className = 'ach-item' + (done ? ' is-done' : '');
+                li.appendChild(svgUse(done ? 'i-check' : 'i-lock'));
+                const text = document.createElement('div');
+                const t = document.createElement('strong');
+                t.textContent = done || !a.secret ? a.title : 'Hidden achievement';
+                const d = document.createElement('span');
+                d.textContent = done || !a.secret ? a.desc : 'Hint: the classics.';
+                text.append(t, d);
+                li.appendChild(text);
+                achList.appendChild(li);
+            });
+        }
+
+        const toastQueue = [];
+        let toastBusy = false;
+        function pumpToasts() {
+            if (toastBusy || !toastQueue.length) return;
+            toastBusy = true;
+            const { kicker, title, desc } = toastQueue.shift();
+            const el = document.createElement('div');
+            el.className = 'toast';
+            el.setAttribute('role', 'status');
+            el.appendChild(svgUse('i-trophy'));
+            const body = document.createElement('div');
+            const k = document.createElement('p');
+            k.className = 'toast-kicker';
+            k.textContent = kicker;
+            const t = document.createElement('p');
+            t.className = 'toast-title';
+            t.textContent = title;
+            body.append(k, t);
+            if (desc) {
+                const d = document.createElement('p');
+                d.className = 'toast-desc';
+                d.textContent = desc;
+                body.appendChild(d);
+            }
+            el.appendChild(body);
+            toastRegion.appendChild(el);
+            requestAnimationFrame(() => requestAnimationFrame(() => el.classList.add('show')));
+            setTimeout(() => {
+                el.classList.remove('show');
+                setTimeout(() => { el.remove(); toastBusy = false; pumpToasts(); }, 450);
+            }, 4200);
+        }
+        const toast = (kicker, title, desc) => { toastQueue.push({ kicker, title, desc }); pumpToasts(); };
+
+        function unlock(id) {
+            if (unlocked.includes(id)) return;
+            const a = ACHIEVEMENTS.find(x => x.id === id);
+            if (!a) return;
+            unlocked.push(id);
+            saveUnlocked();
+            renderAchievements();
+            achBtn.classList.remove('pulse');
+            void achBtn.offsetWidth;
+            achBtn.classList.add('pulse');
+            toast('Achievement unlocked', a.title, a.desc);
+        }
+
+        renderAchievements();
+        setTimeout(() => unlock('start'), 1400);
+
+        const achObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    unlock(entry.target.dataset.ach);
+                    achObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+        ACHIEVEMENTS.filter(a => a.target).forEach(a => {
+            const el = document.querySelector(a.target);
+            if (el) { el.dataset.ach = a.id; achObserver.observe(el); }
+        });
+
+        achBtn.addEventListener('click', () => {
+            const open = achPanel.hidden;
+            achPanel.hidden = !open;
+            achBtn.setAttribute('aria-expanded', String(open));
+        });
+        document.addEventListener('click', (e) => {
+            if (!achPanel.hidden && !achPanel.contains(e.target) && !achBtn.contains(e.target)) {
+                achPanel.hidden = true;
+                achBtn.setAttribute('aria-expanded', 'false');
+            }
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !achPanel.hidden) {
+                achPanel.hidden = true;
+                achBtn.setAttribute('aria-expanded', 'false');
+                achBtn.focus();
+            }
+        });
+
+        // Konami code toggles arcade mode
+        const KONAMI = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+        let konamiIdx = 0;
+        document.addEventListener('keydown', (e) => {
+            const key = e.key.length === 1 ? e.key.toLowerCase() : e.key;
+            konamiIdx = key === KONAMI[konamiIdx] ? konamiIdx + 1 : (key === KONAMI[0] ? 1 : 0);
+            if (konamiIdx === KONAMI.length) {
+                konamiIdx = 0;
+                const on = document.documentElement.classList.toggle('arcade-mode');
+                if (unlocked.includes('konami')) toast('Arcade mode', on ? 'On' : 'Off', '');
+                unlock('konami');
+            }
+        });
+
         // Cursor spotlight on bento cards
         document.addEventListener('pointermove', (e) => {
             const card = e.target.closest('.spot');
@@ -331,18 +554,12 @@
                 personalPanel.setAttribute('aria-hidden', String(isOpen));
                 personalPanel.classList.toggle('open', !isOpen);
                 toggleLabel.textContent = isOpen ? 'Get to know more about me' : 'Show less';
+                if (!isOpen) unlock('side');
                 if (!isOpen && !reduceMotion) {
                     setTimeout(() => personalPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 300);
                 }
             });
         }
-
-        // Parse emojis to ensure they look like flags on Windows
-        window.onload = function() {
-            if (typeof twemoji !== 'undefined') {
-                twemoji.parse(document.body);
-            }
-        };
 
         // Photography auto-scroll: seamless loop, time-based, paused off-screen / on interaction
         const gallery = document.querySelector('.scrolling-gallery');
